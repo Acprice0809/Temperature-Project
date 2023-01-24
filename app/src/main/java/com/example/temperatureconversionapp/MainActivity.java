@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     TextView forFahrenheit;
     Button celisusButton;
     TextView outputBox2;
-
+    Double a;
 
 
     @Override
@@ -40,12 +40,21 @@ public class MainActivity extends AppCompatActivity {
         fahrenheitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String a = inputBox1.getText().toString();
-
+                String s = inputBox1.getText().toString();
+                double a = Double.parseDouble(s);
+                double value = (a * 9.0 / 5.0) + 32;
+                outputBox1.setText(value + "");
             }
         });
 
-        layout.setBackgroundColor(0xffD58E01);
-
+        celisusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String t = inputBox2.getText().toString();
+                double b = Double.parseDouble(t);
+                double value = (b - 32) * 5.0 / 9.0;
+                outputBox2.setText(value + "");
+            }
+        });
     }
 }
